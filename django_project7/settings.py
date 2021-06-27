@@ -31,13 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# installing bootstrap4 to pages
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# After login it will redirect to home page
+LOGIN_REDIRECT_URL = 'blog-home'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
