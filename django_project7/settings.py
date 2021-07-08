@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -125,11 +125,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# installing bootstrap4 to pages
+############################ User defined configuration #################################333333
+
+#User defined directory for store the image file
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+
+# installing bootstrap4 to html pages
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # After login it will redirect to home page
 LOGIN_REDIRECT_URL = 'blog-home'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
